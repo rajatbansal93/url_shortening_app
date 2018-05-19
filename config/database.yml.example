@@ -1,0 +1,16 @@
+default: &default
+  adapter:
+  encoding:
+  username:
+  password:
+  pool:
+  host:
+  timeout:
+
+development:
+  <<: *default
+  database:
+
+test:
+  <<: *default
+  database:
