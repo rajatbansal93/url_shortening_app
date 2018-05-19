@@ -1,0 +1,16 @@
+default: &default
+  adapter:  postgresql
+  encoding: utf8
+  username:
+  password:
+  pool: 5
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *default
+  database: url_shortening
+
+test:
+  <<: *default
+  database: url_shortening_test
