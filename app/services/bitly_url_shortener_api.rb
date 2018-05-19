@@ -7,6 +7,10 @@ class BitlyUrlShortenerApi
     params = { access_token: SECRET_KEY, longUrl: url }
     uri.query = URI.encode_www_form(params)
     res = JSON.parse(Net::HTTP.get_response(uri).body)
-    res['status_code'] == 200 ? res['data']['url'] : 'Something went wrong!!'
+    if res['status_code'] == 200
+      { url: res['data']['url'], status: 200 }
+    else
+      { error: 'Something went wrong!!', status: 400 }
+    end
   end
 end

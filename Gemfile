@@ -39,5 +39,7 @@ gem 'google-api-client', '~> 0.11.1'
 group :development, :test do
   gem 'rubocop', '~> 0.56.0'
   gem 'byebug',      '~> 3.1.2'
+  gem 'rspec',       '~> 3.7'
+  gem 'rspec-rails',  '>= 3.7.2'
 end
 
