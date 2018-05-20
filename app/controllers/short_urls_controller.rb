@@ -3,8 +3,8 @@ class ShortUrlsController < ApplicationController
 
   def create
     response = BitlyUrlShortenerApi.create_short_url(params[:long_url])
-    if response[:staus] == 200
-      render json: { short_url: short_url }
+    if response[:status] == 200
+      render json: { short_url: response[:url] }
     else
       render json: { error: response[:error] }, status: 400
     end
